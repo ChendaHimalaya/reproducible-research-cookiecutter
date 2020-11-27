@@ -68,7 +68,7 @@ class CleanFilesPython3(CleanFiles):
         with open("Dockerfile",'r') as f:
             lines=f.readlines()
 
-        lines[0]="FROM "+self.docker_base_mapping["{{cookiecutter.python_version}}"]
+        lines[0]="FROM "+self.docker_base_mapping["{{cookiecutter.python_version}}"]+"\n"
         with open("Dockerfile","w") as f:
             f.writelines(lines)
 
